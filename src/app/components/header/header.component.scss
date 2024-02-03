@@ -1,0 +1,22 @@
+#container{
+    display: flex;
+    padding: 25px 40px;//Padding is the space between an image or cell contents and its outside border. 
+    margin-bottom: 20px;
+    background-color: rgb(134, 211, 121);
+    color:#fff;
+}
+#links{
+    flex-grow: 2;
+    display: flex; //to have all in the same box
+    gap: 20px;
+    justify-content: right;
+    .link{
+        cursor: pointer;
+        &:hover{
+            color:rgb(48, 25, 4);
+        }
+    }
+}
+img {
+    border-radius: 90%;
+  }
