@@ -1,0 +1,10 @@
+<table>
+  <tbody>
+    <tr *ngFor="let row of grid">
+      <td
+        *ngFor="let tile of row"
+        [ngStyle]="{ 'background-color': tile.color }"
+      ></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+table {
+  aspect-ratio: 1/1;
+}
+
+td {
+  width: calc(100% / var(--columns));
+  height: calc(100% / var(--columns));
+  padding: 10px;
+}

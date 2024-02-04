@@ -1,0 +1,13 @@
+<div class="btn-container">
+  <button
+    class="type-btn"
+    *ngFor="let pair of colorTypePair"
+    (click)="setType(pair[0])"
+  >
+    <div
+      class="colored-square"
+      [ngStyle]="{ 'background-color': pair[1] }"
+    ></div>
+    <p>{{ pair[0] }}</p>
+  </button>
+</div>

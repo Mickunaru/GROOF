@@ -1,10 +1,11 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { FormsDataService } from '../../services/forms-data.service';
+import { DynamicGridComponent } from '../../components/dynamic-grid/dynamic-grid.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [],
+  imports: [DynamicGridComponent],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss'
 })
