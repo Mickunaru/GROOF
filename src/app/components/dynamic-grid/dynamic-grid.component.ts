@@ -67,6 +67,7 @@ export class DynamicGridComponent implements OnInit, OnDestroy {
           color = 'green'
           break;
       }
+      this.tiles[index].type = this.selectedType;
       this.tiles[index].color = color;
     }
   }
