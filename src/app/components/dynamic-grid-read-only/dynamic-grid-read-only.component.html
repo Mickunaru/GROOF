@@ -1,0 +1,21 @@
+<div class="grid-container">
+  <div
+    class="grid"
+    [ngStyle]="{
+      display: 'grid',
+      'grid-template-rows': 'repeat(' + height + ', 1fr)',
+      'grid-template-columns': 'repeat(' + width + ', 1fr)'
+    }"
+  >
+    <button
+      *ngFor="let tile of tiles; let i = index"
+      class="tile"
+      [ngStyle]="{
+        width: 600 / sideMax + 'px',
+        height: 600 / sideMax + 'px',
+        'background-color': tile.color
+      }"
+      disabled
+    ></button>
+  </div>
+</div>

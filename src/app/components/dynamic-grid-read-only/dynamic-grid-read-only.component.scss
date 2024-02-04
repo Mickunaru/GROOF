@@ -1,0 +1,15 @@
+.grid-container {
+  width: 600px;
+  height: 600px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: grey;
+  margin: 10px 0;
+}
+
+.tile {
+  border: 1px solid #9E9E9E;
+  outline: none;
+}
