@@ -7,12 +7,11 @@ import { Subscription } from 'rxjs';
 import { TileTypeService } from '../../services/tile-type.service';
 import { GridDataService } from '../../services/grid-data.service';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-dynamic-grid',
   standalone: true,
-  imports: [CommonModule, RouterLink, MatButtonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './dynamic-grid.component.html',
   styleUrl: './dynamic-grid.component.scss'
 })
@@ -77,6 +76,7 @@ export class DynamicGridComponent implements OnInit, OnDestroy {
       this.gridDataService.tilesChanged.next(this.tiles);
       this.gridDataService.height = this.height;
       this.gridDataService.width = this.width;
+      console.log(this.gridDataService.getNumberOfGreenTiles());
       this.router.navigate(['../results'], { relativeTo: this.route })
     }
   }

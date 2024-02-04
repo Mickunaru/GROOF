@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { GridDataService } from '../../services/grid-data.service';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class FormComponent {
   public resultSmall:number=0;
   public resultMedium:number=0;
   public resultLarge:number=0;
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private gridDataService: GridDataService) {
     this.form = this.fb.group({
       inputOne: [0],
       inputTwo: [0],
@@ -23,8 +24,11 @@ export class FormComponent {
   }
 
   onSubmit() {
-    this.resultSmall = ((100*(this.form.value.inputOne/100))/(0.5))*(5);
-    this.resultMedium = ((100*(this.form.value.inputTwo/100))/(0.5))*(200);
-    this.resultLarge = ((100*(this.form.value.inputThree/100)/(0.5)))*(1000);
+    const nGreenTile= this.gridDataService.getNumberOfGreenTiles();
+    this.resultSmall = ((nGreenTile*(this.form.value.inputOne/100))/(0.5))*(5);
+    this.resultMedium = ((nGreenTile*(this.form.value.inputTwo/100))/(0.5))*(200);
+    this.resultLarge = ((nGreenTile*(this.form.value.inputThree/100)/(0.5)))*(1000);
+    
+    console.log("hello",nGreenTile);
   }
 }
