@@ -1,22 +1,44 @@
-#container{
+#container {
     display: flex;
-    padding: 25px 40px;//Padding is the space between an image or cell contents and its outside border. 
+    align-items: center; 
+    padding: 10px 40px;
     margin-bottom: 20px;
-    background-color: rgb(134, 211, 121);
-    color:#fff;
+    background-color: rgb(35, 64, 27);
+    color: #fff;
+   
 }
-#links{
-    flex-grow: 2;
-    display: flex; //to have all in the same box
+
+
+#logo, #links {
+    display: flex;
+    align-items: center; 
+}
+
+#links {
+    flex-grow: 1;
+    justify-content: flex-end; 
     gap: 20px;
-    justify-content: right;
-    .link{
-        cursor: pointer;
-        &:hover{
-            color:rgb(48, 25, 4);
-        }
-    }
 }
+
+.link {
+    cursor: pointer;
+    color: rgb(138, 192, 117);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: rgb(186, 208, 177);
+}
+
 img {
-    border-radius: 90%;
-  }
+    border-radius: 50%; 
+    margin-right: 20px; 
+}
+
+#about {
+    background-color: rgb(65, 109, 62); 
+    color: white;
+    border:black; 
+    padding: 10px 20px; 
+    cursor: pointer; 
+}
