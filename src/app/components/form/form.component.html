@@ -1,0 +1,24 @@
+<div class="containerForm">
+    <h2>Calculation Form</h2>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="inputOne">Input the percentage for small plants(0.5m^2):</label>
+        <input type="number" formControlName="inputOne">
+      </div>
+      <div>
+        <label for="inputTwo">Input the percentage for medium plants(1m^2):</label>
+        <input type="number" formControlName="inputTwo">
+      </div>
+      <div>
+        <label for="inputTwo">Input the percentage for large plants(2m^2):</label>
+        <input type="number" formControlName="inputThree">
+      </div>
+      <button type="submit">Calculate</button>
+    </form>
+  </div>
+
+  <div>
+    <p>Small Result: {{resultSmall}}</p>
+    <p>Medium Result: {{resultMedium}}</p>
+    <p>Large Result: {{resultLarge}}</p>
+</div>

@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+}
+
+.roof-info {
+    padding: 20px;
+    background-color: rgb(134, 211, 121);
+    width: 400px;
+    border-radius: 10px;
+}
+
+.button-visualise {
+    border-radius: 5px;
+    background-color: rgb(66, 107, 172);
+    padding: 5px;
+    width: 150px;
+}
+
+.button-visualise:hover {
+    background-color: rgb(93, 126, 180);
+}
+
+.button-div {
+    text-align: center;
+    width: 300px;
+}  
+
+.button-text {
+    color: white;    
+
+}
+
+canvas {
+    margin: 20px;
+}

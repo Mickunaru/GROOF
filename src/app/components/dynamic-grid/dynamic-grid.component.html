@@ -1,10 +1,25 @@
-<table>
-  <tbody>
-    <tr *ngFor="let row of grid">
-      <td
-        *ngFor="let tile of row"
-        [ngStyle]="{ 'background-color': tile.color }"
-      ></td>
-    </tr>
-  </tbody>
-</table>
+<div class="whole">
+  <app-tile-selector></app-tile-selector>
+  <div class="grid-container">
+    <div
+      class="grid"
+      [ngStyle]="{
+        display: 'grid',
+        'grid-template-rows': 'repeat(' + height + ', 1fr)',
+        'grid-template-columns': 'repeat(' + width + ', 1fr)'
+      }"
+    >
+      <button
+        *ngFor="let tile of tiles; let i = index"
+        class="tile"
+        [ngStyle]="{
+          width: 600 / sideMax + 'px',
+          height: 600 / sideMax + 'px',
+          'background-color': tile.color
+        }"
+        (mousedown)="changeColor(i, $event)"
+        (mousemove)="changeColor(i, $event)"
+      ></button>
+    </div>
+  </div>
+</div>
