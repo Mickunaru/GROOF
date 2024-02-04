@@ -1,4 +1,4 @@
-body {
+  body {
     font-family:'Courier New', Courier, monospace;
     margin: 0;
   }
@@ -37,4 +37,11 @@ body {
     margin-left: auto;
     margin-right: 20;
     margin-left: 30;
+    justify-content: center;
+  }
+
+  #logoAbout {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
