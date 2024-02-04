@@ -1,5 +1,4 @@
 <div class="whole">
-  <app-tile-selector></app-tile-selector>
   <div class="grid-container">
     <div
       class="grid"
@@ -22,4 +21,12 @@
       ></button>
     </div>
   </div>
+  <button
+    class="submit-btn button-28"
+    (click)="onSubmit()"
+    [disabled]="height === 0 || width === 0"
+    [ngClass]="{ 'disabled-btn': height === 0 || width === 0 }"
+  >
+    Submit
+  </button>
 </div>
