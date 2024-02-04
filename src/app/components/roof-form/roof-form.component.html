@@ -2,18 +2,18 @@
 <div class="roof-info">
   <h3>Dimensions (top view)</h3>
   <label for="height">Height:</label>
-  <input type="text" id="height" name="height" required />
-  <p style="display: inline-block">meters (max 30 m)</p>
+  <input type="number" id="height" name="height" required min="5" max="40"/>
+  <p style="display: inline-block">meters (between 5-40m)</p>
   <br /><br />
   <label for="fname">Width:</label>
-  <input type="text" id="width" name="width" required />
-  <p style="display: inline-block">meters (max 30 m)</p>
+  <input type="number" id="width" name="width" required min="5" max="40"/>
+  <p style="display: inline-block">meters (between 5-40m)</p>
   <br /><br />
   <h3>Access Point to the roof:</h3>
   <label for="x">X-coordinate:</label>
-  <input type="text" id="x" name="x" required /><br /><br />
+  <input type="number" id="x" name="x" required /><br /><br />
   <label for="y">Y-coordinate:</label>
-  <input type="text" id="y" name="y" required /><br /><br />
+  <input type="number" id="y" name="y" required /><br /><br />
   <div class="button-div">
     <button class="button-visualise" (click)="getInputValues()">
       <p class="button-text">Visualize roof</p>
