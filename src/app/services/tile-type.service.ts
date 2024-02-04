@@ -5,7 +5,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class TileTypeService {
-  selectedType: BehaviorSubject<string> = new BehaviorSubject('free');
+  selectedType: BehaviorSubject<string> = new BehaviorSubject('available');
 
   constructor() { }
 }

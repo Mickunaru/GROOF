@@ -5,12 +5,14 @@ import { FormsDataService } from '../../services/forms-data.service';
 import { RoofDataModel } from '../../models/roof-data.model';
 import { Subscription } from 'rxjs';
 import { TileTypeService } from '../../services/tile-type.service';
-import { TileSelectorComponent } from '../tile-selector/tile-selector.component';
+import { GridDataService } from '../../services/grid-data.service';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-dynamic-grid',
   standalone: true,
-  imports: [CommonModule, TileSelectorComponent],
+  imports: [CommonModule, RouterLink, MatButtonModule],
   templateUrl: './dynamic-grid.component.html',
   styleUrl: './dynamic-grid.component.scss'
 })
@@ -22,7 +24,7 @@ export class DynamicGridComponent implements OnInit, OnDestroy {
   tiles: TileModel[] = [];
   formsDataSubscription: Subscription = new Subscription();
   tileTypeSubscription: Subscription = new Subscription();
-  constructor(private formsDataService: FormsDataService, private tileTypeService: TileTypeService) { }
+  constructor(private formsDataService: FormsDataService, private tileTypeService: TileTypeService, private gridDataService: GridDataService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.tileTypeSubscription = this.tileTypeService.selectedType.subscribe((type: string) => {
@@ -67,6 +69,15 @@ export class DynamicGridComponent implements OnInit, OnDestroy {
           break;
       }
       this.tiles[index].color = color;
+    }
+  }
+
+  onSubmit() {
+    if (this.height !== 0 && this.width !== 0) {
+      this.gridDataService.tilesChanged.next(this.tiles);
+      this.gridDataService.height = this.height;
+      this.gridDataService.width = this.width;
+      this.router.navigate(['../results'], { relativeTo: this.route })
     }
   }
 }
