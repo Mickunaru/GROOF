@@ -1,21 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { RoofDataModel } from '../models/roof-data.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormsDataService {
-  height: BehaviorSubject<number> = new BehaviorSubject(0);
-  width: BehaviorSubject<number> = new BehaviorSubject(0);
-  xValue: BehaviorSubject<number> = new BehaviorSubject(0);
-  yValue: BehaviorSubject<number> = new BehaviorSubject(0);
-  
-  // constructor() { }
+  dataChanged: BehaviorSubject<RoofDataModel> = new BehaviorSubject(new RoofDataModel(0, 0, 0, 0));
 
   setValues(h: number, w: number, x: number, y: number) {
-    this.height.next(h);
-    this.width.next(w);
-    this.xValue.next(x);
-    this.yValue.next(y);
+    this.dataChanged.next(new RoofDataModel(h, w, x, y));
   }
 }
